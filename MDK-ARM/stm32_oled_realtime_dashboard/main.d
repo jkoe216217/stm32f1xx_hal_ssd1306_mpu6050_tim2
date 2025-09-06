@@ -34,3 +34,4 @@ stm32_oled_realtime_dashboard\main.o: ../Core/Inc/gpio.h
 stm32_oled_realtime_dashboard\main.o: ..\MDK-ARM\MPU6050.h
 stm32_oled_realtime_dashboard\main.o: ..\MDK-ARM\ssd1306.h
 stm32_oled_realtime_dashboard\main.o: ..\MDK-ARM\fonts.h
+stm32_oled_realtime_dashboard\main.o: D:\keil5\ARM\ARMCC\Bin\..\include\math.h

@@ -23,6 +23,7 @@
 #include "gpio.h"
 #include "MPU6050.h"
 #include "ssd1306.h"
+#include <math.h>
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -122,28 +123,64 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		if (htim->Instance == TIM2)        // 只处理 TIM2
 		{
 				/* 这里写 1 秒要做的事情 */
-				/* 采样 */
-			MPU6050_Read_Accel(&hi2c1, &MPU6050);
+//				/* 采样 */
+//			MPU6050_Read_Accel(&hi2c1, &MPU6050);
+//	
+//			/* 组字符串 */
+//			sprintf(oled_buf, "Ax:%.2fg", MPU6050.Ax);
+//			ssd1306_SetCursor(0, 0);
+//			ssd1306_WriteString(oled_buf, Font_7x10, White);
 
-			/* 组字符串 */
-			sprintf(oled_buf, "Ax:%.2fg", MPU6050.Ax);
-			ssd1306_SetCursor(0, 0);
-			ssd1306_WriteString(oled_buf, Font_7x10, White);
+//			sprintf(oled_buf, "Ay:%.2fg", MPU6050.Ay);
+//			ssd1306_SetCursor(0, 10);
+//			ssd1306_WriteString(oled_buf, Font_7x10, White);
 
-			sprintf(oled_buf, "Ay:%.2fg", MPU6050.Ay);
-			ssd1306_SetCursor(0, 10);
-			ssd1306_WriteString(oled_buf, Font_7x10, White);
+//			sprintf(oled_buf, "Az:%.2fg", MPU6050.Az);
+//			ssd1306_SetCursor(0, 20);
+//			ssd1306_WriteString(oled_buf, Font_7x10, White);
 
-			sprintf(oled_buf, "Az:%.2fg", MPU6050.Az);
-			ssd1306_SetCursor(0, 20);
-			ssd1306_WriteString(oled_buf, Font_7x10, White);
-
-			/* 一次性刷新到屏幕 */
-			ssd1306_UpdateScreen(&hi2c1);
-
-		}
-}
-
+//			/* 一次性刷新到屏幕 */
+//			ssd1306_UpdateScreen(&hi2c1);
+		static double buf[5] = {0};              // 存 10 次角度
+		static uint8_t idx = 0;                   // 循环指针
+		
+		MPU6050_Read_All(&hi2c1, &MPU6050);
+		
+		double pitch = atan2(-MPU6050.Ax, MPU6050.Az) * 57.3;	
+    buf[idx] = pitch;                         // 存新角度
+		idx = (idx + 1) % 10;                     // 循环存
+		double avg = 0;
+		for (uint8_t i = 0; i < 5; i++) avg += buf[i];
+		avg /= 5;                              // 取平均
+		int len = (int)fabs(avg) * 2;
+		ssd1306_Fill(Black);
+		for(int i=0;i<len;i++)
+		{			
+			ssd1306_DrawPixel(64-i, 40, White);			
+		}ssd1306_UpdateScreen(&hi2c1);
+		
+//		if(avg<0)
+//		{
+//			int len = (int)fabs(avg) * 2;
+//			ssd1306_Fill(Black);
+//			for(int i=0;i<len;i++)
+//			{			
+//				ssd1306_DrawPixel(64-i, 40, White);			
+//			}ssd1306_UpdateScreen(&hi2c1);
+//		}
+//		else
+//		{
+//			int len = (int)fabs(avg) * 2;
+//			ssd1306_Fill(Black);
+//			for(int i=0;i<len;i++)	
+//			{
+//				ssd1306_DrawPixel(64+i, 40, White);		
+//			}ssd1306_UpdateScreen(&hi2c1);
+//		}
+		
+			
+		}	
+}		
 /**
   * @brief System Clock Configuration
   * @retval None

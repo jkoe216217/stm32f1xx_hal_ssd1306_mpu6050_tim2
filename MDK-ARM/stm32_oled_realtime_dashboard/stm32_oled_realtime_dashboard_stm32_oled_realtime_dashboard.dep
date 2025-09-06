@@ -1,6 +1,6 @@
 Dependencies for Project 'stm32_oled_realtime_dashboard', Target 'stm32_oled_realtime_dashboard': (DO NOT MODIFY !)
 F (startup_stm32f103xb.s)(0x68B7D6CB)(--cpu Cortex-M3 -g --apcs=interwork -I.\RTE\_stm32_oled_realtime_dashboard-ID:\keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include--pd "__UVISION_VERSION SETA 524" --pd "_RTE_ SETA 1" --pd "STM32F10X_MD SETA 1"--list startup_stm32f103xb.lst --xref -o stm32_oled_realtime_dashboard\startup_stm32f103xb.o --depend stm32_oled_realtime_dashboard\startup_stm32f103xb.d)
-F (../Core/Src/main.c)(0x68B977DA)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\MDK-ARM-I.\RTE\_stm32_oled_realtime_dashboard-ID:\keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o stm32_oled_realtime_dashboard\main.o --omf_browse stm32_oled_realtime_dashboard\main.crf --depend stm32_oled_realtime_dashboard\main.d)
+F (../Core/Src/main.c)(0x68BC4AFC)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\MDK-ARM-I.\RTE\_stm32_oled_realtime_dashboard-ID:\keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o stm32_oled_realtime_dashboard\main.o --omf_browse stm32_oled_realtime_dashboard\main.crf --depend stm32_oled_realtime_dashboard\main.d)
 I (../Core/Inc/main.h)(0x68B7D6CA)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x68B5317D)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x68B7D6C9)
@@ -35,6 +35,7 @@ I (../Core/Inc/gpio.h)(0x68B7D6C9)
 I (..\MDK-ARM\MPU6050.h)(0x68B836F2)
 I (..\MDK-ARM\ssd1306.h)(0x68B69330)
 I (..\MDK-ARM\fonts.h)(0x68B69294)
+I (D:\keil5\ARM\ARMCC\include\math.h)(0x588B8344)
 F (../Core/Src/gpio.c)(0x68B7D6C9)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\MDK-ARM-I.\RTE\_stm32_oled_realtime_dashboard-ID:\keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o stm32_oled_realtime_dashboard\gpio.o --omf_browse stm32_oled_realtime_dashboard\gpio.crf --depend stm32_oled_realtime_dashboard\gpio.d)
 I (../Core/Inc/gpio.h)(0x68B7D6C9)
 I (../Core/Inc/main.h)(0x68B7D6CA)
@@ -95,7 +96,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h)(0x68B5317D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x68B5317D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x68B5317D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x68B5317D)
-F (../Core/Src/tim.c)(0x68B7D6C9)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\MDK-ARM-I.\RTE\_stm32_oled_realtime_dashboard-ID:\keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o stm32_oled_realtime_dashboard\tim.o --omf_browse stm32_oled_realtime_dashboard\tim.crf --depend stm32_oled_realtime_dashboard\tim.d)
+F (../Core/Src/tim.c)(0x68BC4A8E)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\MDK-ARM-I.\RTE\_stm32_oled_realtime_dashboard-ID:\keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o stm32_oled_realtime_dashboard\tim.o --omf_browse stm32_oled_realtime_dashboard\tim.crf --depend stm32_oled_realtime_dashboard\tim.d)
 I (../Core/Inc/tim.h)(0x68B7D6C9)
 I (../Core/Inc/main.h)(0x68B7D6CA)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x68B5317D)
