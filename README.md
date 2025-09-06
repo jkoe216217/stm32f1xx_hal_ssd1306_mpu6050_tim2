@@ -1,0 +1,2 @@
+该项目用到硬件：stm32f103c8t6，mpu6050，ssd1306.把mpu6050收集到的X轴和Z轴的加速度通过atan2函数转换成俯仰角，进而知道芯片的倾斜角度。在ssd1306上通过横条的长度动态变化实时看到倾斜情况。
+引入滑动平均和适当调整TIM2中断频率来增强横条变化的平滑度。/This project utilizes the STM32F103C8T6, MPU6050, and SSD1306 hardware. The MPU6050 captures X-axis and Z-axis acceleration data, which is converted into pitch angles via the atan2 function to determine the chip's tilt. The SSD1306 visually represents the tilt with a dynamic horizontal bar. To ensure smooth bar transitions, a sliding average filter is implemented, and the TIM2 interrupt frequency is finely tuned.
